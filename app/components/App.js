@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropertyCard from './PropertyCard'
 
 export default class App extends React.Component {
 
@@ -85,13 +85,7 @@ export default class App extends React.Component {
           <ul>
             {results.map((result) => {
               return <li key={result.id}>
-                <div>{result.id}</div>
-                <div>{result.mainImage}</div>
-                <div>{result.agency.logo}</div>
-                <div>{result.price}</div>
-                <button onClick={() => { this.handleAddPropBtnCLick(result) }}>add property</button>
-                <br/>
-                <br/>
+                <PropertyCard result={result} handleAddPropBtnCLick={this.handleAddPropBtnCLick} />
               </li>
             })}
           </ul>
