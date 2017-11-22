@@ -5,7 +5,8 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.handleBtnItemCLick = this.handleBtnItemCLick.bind(this)
+    this.handleAddPropBtnCLick = this.handleAddPropBtnCLick.bind(this)
+    this.handleRemovePropBtnCLick = this.handleRemovePropBtnCLick.bind(this)
 
     this.state = {
       results: [{
@@ -54,8 +55,25 @@ export default class App extends React.Component {
     }
   }
 
-  handleBtnItemCLick(result) {
-    console.log('button is clicked');
+  handleAddPropBtnCLick(result) {
+    var { results, saved } = this.state
+    var existingProp = saved.filter(savedProp => savedProp.id === result.id)[0]
+    console.log(existingProp);
+    if (existingProp) {
+
+      this.setState({ saved: saved })
+    } else {
+      var copiedProp = Object.assign({}, result)
+      saved.push(copiedProp)
+      this.setState({ saved: saved })
+    }
+  }
+
+  handleRemovePropBtnCLick(savedProp) {
+    var { results, saved } = this.state
+    // create new array of saved property that does not have the id of the removed property
+    saved = saved.filter(saved => saved.id !== savedProp.id);
+    this.setState({ saved: saved })
   }
 
 
@@ -64,20 +82,39 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <h2>Results</h2>
-        <ul>
-          {results.map((result) => {
-            return <li key={result.id}>
-              <div>{result.id}</div>
-              <div>{result.mainImage}</div>
-              <div>{result.agency.logo}</div>
-              <div>{result.price}</div>
-              <button onClick={() => { this.handleBtnItemCLick(result) }}>add property</button>
-              <br/>
-              <br/>
-            </li>
-          })}
-        </ul>
+        <div>
+          <h2>Results</h2>
+          <ul>
+            {results.map((result) => {
+              return <li key={result.id}>
+                <div>{result.id}</div>
+                <div>{result.mainImage}</div>
+                <div>{result.agency.logo}</div>
+                <div>{result.price}</div>
+                <button onClick={() => { this.handleAddPropBtnCLick(result) }}>add property</button>
+                <br/>
+                <br/>
+              </li>
+            })}
+          </ul>
+        </div>
+
+        <div>
+          <h2>Saved Properties</h2>
+          <ul>
+            {saved.map((savedProp) => {
+              return <li key={savedProp.id}>
+                <div>{savedProp.id}</div>
+                <div>{savedProp.mainImage}</div>
+                <div>{savedProp.agency.logo}</div>
+                <div>{savedProp.price}</div>
+                <button onClick={() => { this.handleRemovePropBtnCLick(savedProp) }}>remove property</button>
+                <br/>
+                <br/>
+              </li>
+            })}
+          </ul>
+        </div>
       </div>
     )
   }
