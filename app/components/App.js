@@ -59,10 +59,8 @@ export default class App extends React.Component {
     var { results, saved } = this.state
     var existingProp = saved.filter(savedProp => savedProp.id === result.id)[0]
     console.log(existingProp);
-    if (existingProp) {
-
-      this.setState({ saved: saved })
-    } else {
+    // if property does not exist in the saved properties array, clone property object
+    if (!existingProp) {
       var copiedProp = Object.assign({}, result)
       saved.push(copiedProp)
       this.setState({ saved: saved })
