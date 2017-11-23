@@ -85,7 +85,7 @@ export default class App extends React.Component {
           <ul>
             {results.map((result) => {
               return <li key={result.id}>
-                <PropertyCard result={result} handleAddPropBtnCLick={this.handleAddPropBtnCLick} />
+                <PropertyCard list={result} handlePropBtnCLick={this.handleAddPropBtnCLick} btnText='add property' />
               </li>
             })}
           </ul>
@@ -96,13 +96,7 @@ export default class App extends React.Component {
           <ul>
             {saved.map((savedProp) => {
               return <li key={savedProp.id}>
-                <div>{savedProp.id}</div>
-                <div>{savedProp.mainImage}</div>
-                <div>{savedProp.agency.logo}</div>
-                <div>{savedProp.price}</div>
-                <button onClick={() => { this.handleRemovePropBtnCLick(savedProp) }}>remove property</button>
-                <br/>
-                <br/>
+                <PropertyCard list={savedProp} handlePropBtnCLick={this.handleRemovePropBtnCLick} btnText='remove property' />
               </li>
             })}
           </ul>
