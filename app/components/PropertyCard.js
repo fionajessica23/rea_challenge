@@ -9,7 +9,6 @@ export default function PropertyCard(props) {
     backgroundColor: `${list.agency.brandingColors.primary}`
   }
 
-
   return (
     <div className='card-container'>
       <div className='card-header' style={cardDivStyle}>

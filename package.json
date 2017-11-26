@@ -30,6 +30,7 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "json-loader": "^0.5.7",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }
