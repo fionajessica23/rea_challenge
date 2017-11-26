@@ -6,8 +6,12 @@ body {
   font-family: Helvetica;
 
   .card-list-container {
-    border: 1px solid grey;
+    // border: 1px solid grey;
     padding: 0;
+
+    .sub-heading-text {
+      text-align: center;
+    }
 
     ul {
       padding: 0;

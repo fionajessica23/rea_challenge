@@ -84,7 +84,7 @@ export default class App extends React.Component {
       <div className='container'>
         <div className='row'>
           <div className='col-md-6 card-list-container'>
-            <h2>Results</h2>
+            <h2 className='sub-heading-text'>Results</h2>
             <ul>
               {results.map((result) => {
                 return <li key={result.id}>
@@ -96,7 +96,7 @@ export default class App extends React.Component {
 
 
           <div className='col-md-6 card-list-container'>
-            <h2>Saved Properties</h2>
+            <h2 className='sub-heading-text'>Saved Properties</h2>
             <ul>
               {saved.map((savedProp) => {
                 return <li key={savedProp.id}>

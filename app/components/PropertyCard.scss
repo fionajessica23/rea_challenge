@@ -1,6 +1,6 @@
 .card-container {
-  border: 1px solid grey;
-  padding: 20px;
+  // border: 1px solid grey;
+  padding: 30px 50px;
 
   .card-header {
     padding: 10px;
@@ -13,7 +13,7 @@
   }
 
   .card-footer {
-    padding: 15px 10px;
+    padding: 15px 15px 23px 15px;
     font-size: 1.25rem;
     font-weight: 600;
     border: 1px solid lightgrey;
@@ -26,9 +26,10 @@
     .card-button-holder {
       float: right;
 
+
       .button-add-remove {
-        background-color: white;
-        border-radius: 5px;
+        background-color: darkseagreen;
+        border-radius: 12px;
         border: 1px solid grey;
         padding: 5px 15px;
         text-align: center;
@@ -40,6 +41,14 @@
 
 .button-add-remove {
   display: none;
+  outline: none;
+  box-shadow: 0 5px #999;
+}
+
+.button-add-remove:active {
+  background-color: #3e8e41;
+  box-shadow: 0 3px #666;
+  transform: translateY(3px);
 }
 
 .card-container:hover .button-add-remove {
