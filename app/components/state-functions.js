@@ -1,10 +1,11 @@
 
-export function addProperty(state, result) {
-  var { saved } = state
-  var existingProp = saved.filter(savedProp => savedProp.id === result.id)[0]
+export function addProperty(state, id) {
+  var { results, saved } = state
+  var existingProp = saved.filter(savedProp => savedProp.id === id)[0]
+  var propertyToBeCloned = results.filter(objProp => objProp.id === id)[0]
 
   if (!existingProp) {
-    var copiedProp = Object.assign({}, result)
+    var copiedProp = Object.assign({}, propertyToBeCloned)
     saved.push(copiedProp)
   }
 
@@ -14,11 +15,10 @@ export function addProperty(state, result) {
 }
 
 
-
-export function removeProperty(state, savedProp) {
+export function removeProperty(state, id) {
   var { saved } = state
 
   return {
-    saved: saved.filter(saved => saved.id !== savedProp.id)
+    saved: saved.filter(saved => saved.id !== id)
   };
 }

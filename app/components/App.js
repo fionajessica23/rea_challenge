@@ -20,12 +20,11 @@ export default class App extends React.Component {
   }
 
   handleAddPropBtnCLick(result) {
-    this.setState(addProperty(this.state, result))
+    this.setState(addProperty(this.state, result.id))
   }
 
-
   handleRemovePropBtnCLick(savedProp) {
-    this.setState(removeProperty(this.state, savedProp));
+    this.setState(removeProperty(this.state, savedProp.id));
   }
 
   render() {
@@ -44,7 +43,6 @@ export default class App extends React.Component {
               })}
             </ul>
           </div>
-
 
           <div className='col-md-6 card-list-container'>
             <h2 className='sub-heading-text'>Saved Properties</h2>
