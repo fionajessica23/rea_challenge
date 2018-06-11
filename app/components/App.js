@@ -32,6 +32,7 @@ export default class App extends React.Component {
 
     return (
       <div className='container'>
+        <h1 className='header'>Properties For Sale</h1>
         <div className='row'>
           <div className='col-md-6 card-list-container'>
             <h2 className='sub-heading-text'>Results</h2>
