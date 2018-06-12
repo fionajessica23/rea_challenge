@@ -12,11 +12,11 @@ export default function PropertyCard(props) {
   return (
     <div className='card-container'>
       <div className='card-header' style={cardDivStyle}>
-        <img src={list.agency.logo} />
+        <img src={list.agency.logo} alt='Agency logo' />
       </div>
 
       <div className='card-image'>
-        <img src={list.mainImage} />
+        <img src={list.mainImage} alt={`Property photo ${list.id}`} />
       </div>
 
       <div className='card-footer'>
