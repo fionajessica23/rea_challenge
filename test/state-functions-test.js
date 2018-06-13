@@ -1,7 +1,7 @@
-var expect = require('chai').expect
+const expect = require('chai').expect
 
-var StateFunction = require('../app/components/state-functions');
-var propertyData = require('../app/components/property.data.json');
+const StateFunction = require('../app/components/state-functions');
+const propertyData = require('../app/components/property.data.json');
 
 
 describe('Original state', () => {

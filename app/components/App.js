@@ -28,7 +28,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    var { results, saved } = this.state
+    const { results, saved } = this.state
 
     return (
       <div className='container'>

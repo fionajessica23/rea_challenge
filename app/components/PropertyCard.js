@@ -3,9 +3,9 @@ import './PropertyCard.scss'
 
 
 export default function PropertyCard(props) {
-  var list = props.list
+  const list = props.list
 
-  var cardDivStyle = {
+  const cardDivStyle = {
     backgroundColor: `${list.agency.brandingColors.primary}`
   }
 
