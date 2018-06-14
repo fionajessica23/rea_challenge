@@ -13,25 +13,25 @@
 git clone THIS_GIT_REPO_URL
 ```
 
-2. Install dependencies using npm
+2. Install dependencies using yarn
 
 ```
-npm install
+yarn install
 ```
 
 3. Start development server and start coding in /app
 ```
-npm start
+yarn start
 ```
 
 4. Run tests in /test
 ```
-npm test
+yarn test
 ```
 
 5. Github supports hosting the site in a docs directory within the repo. Run the following command to build the site into docs directory and update the source setting on github
 ```
-npm run build
+yarn run build
 ```
 
 ---
