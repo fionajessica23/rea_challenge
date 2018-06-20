@@ -1,4 +1,5 @@
 import React from 'react';
+import PropertyPanel from './PropertyPanel';
 import PropertyCard from './PropertyCard';
 import './App.scss';
 import propertyData from './property.data.json';
@@ -33,25 +34,18 @@ export default class App extends React.Component {
       <div className="container">
         <h1 className="header">For Sale</h1>
         <div className="row">
-          <div className="col-md-6 card-list-container">
-            <h2 className="sub-heading-text">Results</h2>
-            <ul>
-              {results.map(result => (
-                <li key={result.id}>
-                  <PropertyCard list={result} handlePropBtnCLick={this.handleAddPropBtnCLick} btnText="add property" />
-                </li>))}
-            </ul>
-          </div>
-
-          <div className="col-md-6 card-list-container">
-            <h2 className="sub-heading-text">Saved Properties</h2>
-            <ul>
-              {saved.map(savedProp => (
-                <li key={savedProp.id}>
-                  <PropertyCard list={savedProp} handlePropBtnCLick={this.handleRemovePropBtnCLick} btnText="remove property" />
-                </li>))}
-            </ul>
-          </div>
+          <PropertyPanel
+            headingText="Results"
+            results={results}
+            handlePropBtnCLick={this.handleAddPropBtnCLick}
+            buttonText="add property"
+          />
+          <PropertyPanel
+            headingText="Saved Properties"
+            results={saved}
+            handlePropBtnCLick={this.handleRemovePropBtnCLick}
+            buttonText="remove property"
+          />
         </div>
       </div>
     );
