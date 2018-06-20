@@ -1,6 +1,5 @@
 import React from 'react';
 import PropertyPanel from './PropertyPanel';
-import PropertyCard from './PropertyCard';
 import './App.scss';
 import propertyData from './property.data.json';
 
