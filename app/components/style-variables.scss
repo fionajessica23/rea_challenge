@@ -1,0 +1,27 @@
+// Spacing
+$space-base: 0.250rem; // 4px
+$space-sm: 0.750rem; // 12px
+$space-md: 1.000rem; // 16px
+$space-lg: 1.500rem; // 24px
+$space-xxl: 2.500rem; // 40px
+
+//  Font Sizes
+$font-md: 16px;
+$font-xl: 20px;
+
+// Font Weights
+$font-weight-bold: 700;
+
+// Colours
+$color-light-grey: #f0f2f5;
+$color-bluestone-20: #d6d9da;
+$color-bluestone-50: #999fa3;
+$color-alertstone: #507b9a;
+$color-pebble: #697684;
+
+//  Border Radius
+$border-radius-default: 12px;
+
+// Box shadow
+$box-shadow-default: 0 5px $color-bluestone-50;
+$box-shadow-active: 0 3px $color-pebble;

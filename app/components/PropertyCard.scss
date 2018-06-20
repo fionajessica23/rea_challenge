@@ -1,9 +1,10 @@
+@import "./style-variables";
+
 .card-container {
-  // border: 1px solid grey;
-  padding: 30px 50px;
+  padding: $space-lg $space-xxl;
 
   .card-header {
-    padding: 10px;
+    padding: $space-sm;
   }
 
   .card-image {
@@ -13,11 +14,11 @@
   }
 
   .card-footer {
-    padding: 15px 15px 23px 15px;
-    font-size: 1.25rem;
-    font-weight: 600;
-    border: 1px solid lightgrey;
+    padding: $space-md $space-md $space-lg;
+    border: 1px solid $color-bluestone-20;
     margin: 0;
+    font-size: $font-xl;
+    font-weight: $font-weight-bold;
 
     .card-price-holder {
       display: inline-block;
@@ -26,14 +27,13 @@
     .card-button-holder {
       float: right;
 
-
       .button-add-remove {
-        background-color: darkseagreen;
-        border-radius: 12px;
-        border: 1px solid grey;
-        padding: 5px 15px;
+        background-color: $color-alertstone;
+        padding: $space-base $space-sm;
+        border: 1px solid $color-bluestone-50;
+        border-radius: $border-radius-default;
         text-align: center;
-        font-size: 1rem;
+        font-size: $font-md;
       }
     }
   }
@@ -42,12 +42,11 @@
 .button-add-remove {
   display: none;
   outline: none;
-  box-shadow: 0 5px #999;
+  box-shadow: $box-shadow-default;
 }
 
 .button-add-remove:active {
-  background-color: #3e8e41;
-  box-shadow: 0 3px #666;
+  box-shadow: $box-shadow-active;
   transform: translateY(3px);
 }
 

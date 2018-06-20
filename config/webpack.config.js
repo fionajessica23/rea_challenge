@@ -25,10 +25,13 @@ module.exports = (env = {}) => {
     plugins: [
       new HtmlPlugin({
         template: path.join(PATHS.app, 'index.html'),
-        hash: !!env.prod,
+        hash: !!env.production,
       }),
       new webpack.NamedModulesPlugin(),
       new ExtractTextPlugin('[name].css'),
+      new webpack.DefinePlugin({
+        'process.env': { NODE_ENV: JSON.stringify(env.production ? 'production' : 'development') },
+      }),
     ],
 
     module: {
