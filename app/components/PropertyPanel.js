@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PropertyCard from './PropertyCard';
 import './PropertyCard.scss';
 
@@ -26,3 +27,10 @@ export default function PropertyPanel(props) {
     </div>
   );
 }
+
+PropertyPanel.propTypes = {
+  headingText: PropTypes.string.isRequired,
+  results: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handlePropBtnCLick: PropTypes.func.isRequired,
+  buttonText: PropTypes.string.isRequired,
+};

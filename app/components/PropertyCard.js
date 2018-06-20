@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './PropertyCard.scss';
 
 
@@ -28,3 +29,7 @@ export default function PropertyCard(props) {
     </div>
   );
 }
+
+PropertyCard.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

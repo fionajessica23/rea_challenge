@@ -35,8 +35,9 @@
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.4"
   },
-  "dependencies": { 
+  "dependencies": {
     "json-loader": "^0.5.7",
+    "prop-types": "^15.6.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }
