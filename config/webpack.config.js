@@ -19,7 +19,7 @@ module.exports = (env = {}) => {
     },
     output: { // bundles everthing to the output.path dir
       path: PATHS.build, // naming it with output.filename
-      filename: '[name].bundle.js', // [name] replaced with entry object key
+      filename: '[name].build.js', // [name] replaced with entry object key
     },
 
     plugins: [
