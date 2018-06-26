@@ -6,7 +6,8 @@ $space-lg: 1.500rem; // 24px
 $space-xxl: 2.500rem; // 40px
 
 //  Font Sizes
-$font-md: 16px;
+$font-root: 16px;
+$font-md: $font-root;
 $font-xl: 20px;
 
 // Font Weights

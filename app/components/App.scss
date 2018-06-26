@@ -1,7 +1,7 @@
 @import "./style-variables";
 
 html {
-  font-size: $font-md; //override bootstrap font-size
+  font-size: $font-root; //override bootstrap font-size
 }
 
 body {
