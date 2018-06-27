@@ -12,17 +12,17 @@ import {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.handleAddPropBtnCLick = this.handleAddPropBtnCLick.bind(this);
-    this.handleRemovePropBtnCLick = this.handleRemovePropBtnCLick.bind(this);
+    this.handleAddPropBtnClick = this.handleAddPropBtnClick.bind(this);
+    this.handleRemovePropBtnClick = this.handleRemovePropBtnClick.bind(this);
 
     this.state = propertyData;
   }
 
-  handleAddPropBtnCLick(result) {
+  handleAddPropBtnClick(result) {
     this.setState(addProperty(this.state, result.id));
   }
 
-  handleRemovePropBtnCLick(savedProp) {
+  handleRemovePropBtnClick(savedProp) {
     this.setState(removeProperty(this.state, savedProp.id));
   }
 
@@ -36,13 +36,13 @@ export default class App extends React.Component {
           <PropertyPanel
             headingText="Results"
             results={results}
-            handlePropBtnCLick={this.handleAddPropBtnCLick}
+            handlePropBtnClick={this.handleAddPropBtnClick}
             buttonText="add property"
           />
           <PropertyPanel
             headingText="Saved Properties"
             results={saved}
-            handlePropBtnCLick={this.handleRemovePropBtnCLick}
+            handlePropBtnClick={this.handleRemovePropBtnClick}
             buttonText="remove property"
           />
         </div>

@@ -7,7 +7,7 @@ export default function PropertyPanel(props) {
   const {
     headingText,
     results,
-    handlePropBtnCLick,
+    handlePropBtnClick,
     buttonText,
   } = props;
 
@@ -18,8 +18,8 @@ export default function PropertyPanel(props) {
         {results.map(result => (
           <li key={result.id}>
             <PropertyCard
-              list={result}
-              handlePropBtnCLick={handlePropBtnCLick}
+              listing={result}
+              handlePropBtnClick={handlePropBtnClick}
               buttonText={buttonText}
             />
           </li>))}
@@ -30,7 +30,17 @@ export default function PropertyPanel(props) {
 
 PropertyPanel.propTypes = {
   headingText: PropTypes.string.isRequired,
-  results: PropTypes.arrayOf(PropTypes.object).isRequired,
-  handlePropBtnCLick: PropTypes.func.isRequired,
+  results: PropTypes.arrayOf(PropTypes.shape({
+    price: PropTypes.string.isRequired,
+    agency: PropTypes.shape({
+      brandingColors: PropTypes.shape({
+        primary: PropTypes.string.isRequired,
+      }).isRequired,
+      logo: PropTypes.string.isRequired,
+    }).isRequired,
+    id: PropTypes.string.isRequired,
+    mainImage: PropTypes.string.isRequired,
+  })).isRequired,
+  handlePropBtnClick: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
