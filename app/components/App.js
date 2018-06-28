@@ -1,12 +1,12 @@
 import React from 'react';
 import PropertyPanel from './PropertyPanel';
 import './App.scss';
-import propertyData from './property.data.json';
+import propertyData from './../state/property.data.json';
 
 import {
   addProperty,
   removeProperty,
-} from './state-functions';
+} from './../state/state-functions';
 
 
 export default class App extends React.Component {
