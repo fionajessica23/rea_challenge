@@ -1,15 +1,15 @@
 @import "./../style/style-variables";
 
 html {
-  font-size: $font-root; //override bootstrap font-size
+  font-size: $root-font; //override bootstrap font-size
 }
 
 body {
-  background-color: $color-light-grey;
+  background-color: $anti-flash-white;
   font-family: Helvetica;
 
   .header {
-    padding: $space-md 0;
+    padding: $med-space 0;
     text-align: center;
   }
 
