@@ -1,22 +1,22 @@
-const expect = require('chai').expect
+const expect = require('chai').expect;
 
-const StateFunction = require('../app/components/state-functions');
-const propertyData = require('../app/components/property.data.json');
+const StateFunction = require('./../app/state/state-functions');
+const propertyData = require('./../app/state/property.data.json');
 
 
 describe('Original state', () => {
   it('The original saved property list contain 1 property', () => {
-    expect(propertyData.saved).to.have.lengthOf(1)
-  })
+    expect(propertyData.saved).to.have.lengthOf(1);
+  });
   it('Property Id:4 is in the saved property list', () => {
-    expect(propertyData.saved[0].id).to.equal('4')
-  })
+    expect(propertyData.saved[0].id).to.equal('4');
+  });
   it('Property Id:1 should not in the saved property list', () => {
-    expect(propertyData.saved[0].id).to.not.equal('1')
-  })
-})
+    expect(propertyData.saved[0].id).to.not.equal('1');
+  });
+});
 
-describe('State Function', function() {
+describe('State Function', () => {
 
   describe('#addProperty', function() {
     it('Add Property Id:3 from results property list, it should add it to the saved list', () => {
@@ -35,4 +35,4 @@ describe('State Function', function() {
       expect(StateFunction.removeProperty(propertyData, '4')).to.have.property('saved').with.lengthOf(1)
     })
   })
-})
+});
