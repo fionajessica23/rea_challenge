@@ -7,7 +7,7 @@ const ROOT = path.join(__dirname, '../');
 
 const PATHS = {
   app: path.join(ROOT, 'app'),
-  build: path.join(ROOT, 'docs'),
+  build: path.join(ROOT, 'build'),
 };
 
 module.exports = (env = {}) => {
