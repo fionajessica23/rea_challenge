@@ -31,7 +31,7 @@ export default function PropertyCard(props) {
 }
 
 PropertyCard.propTypes = {
-  listing: PropTypes.arrayOf(PropTypes.shape({
+  listing: PropTypes.shape({
     price: PropTypes.string.isRequired,
     agency: PropTypes.shape({
       brandingColors: PropTypes.shape({
@@ -41,7 +41,7 @@ PropertyCard.propTypes = {
     }).isRequired,
     id: PropTypes.string.isRequired,
     mainImage: PropTypes.string.isRequired,
-  })).isRequired,
+  }).isRequired,
   handlePropBtnClick: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
 };

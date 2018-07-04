@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="card-container"
+>
+  <div
+    className="card-header"
+    style={
+      Object {
+        "backgroundColor": "#000000",
+      }
+    }
+  >
+    <img
+      alt="Agency logo"
+      src="http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif"
+    />
+  </div>
+  <div
+    className="card-image"
+  >
+    <img
+      alt="Property 9"
+      src="http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg"
+    />
+  </div>
+  <div
+    className="card-footer"
+  >
+    <div
+      className="card-price-holder"
+    >
+      $650,000
+    </div>
+    <div
+      className="card-button-holder"
+    >
+      <button
+        className="button-add-remove"
+        onClick={[Function]}
+      >
+        some button text
+      </button>
+    </div>
+  </div>
+</div>
+`;
