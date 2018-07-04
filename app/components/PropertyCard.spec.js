@@ -20,9 +20,9 @@ const defaultProps = {
   buttonText: 'some button text',
 };
 
-it('renders correctly', () => {
+it('renders Property Card correctly', () => {
   const tree = renderer
-    .create(<PropertyCard {...defaultProps} >Facebook</PropertyCard>)
+    .create(<PropertyCard {...defaultProps} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
