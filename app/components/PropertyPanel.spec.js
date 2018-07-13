@@ -39,10 +39,10 @@ it('renders Property Panel with props correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-// it('renders Property Panel with no listing', () => {
-//   const tree = renderer;
-//   const propWithNoListing = { ...defaultProps, results: [] }
-//     .create(<PropertyPanel {...propWithNoListing} />)
-//     .toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+it('renders Property Panel with no listing', () => {
+  const propWithNoListing = { ...defaultProps, results: [] };
+  const tree = renderer
+    .create(<PropertyPanel {...propWithNoListing} />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});

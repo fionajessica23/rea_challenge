@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PropertyCard from './PropertyCard';
 import './PropertyCard.scss';
 
-export default function PropertyPanel(props) {
+function PropertyPanel(props) {
   const {
     headingText,
     results,
@@ -11,7 +11,9 @@ export default function PropertyPanel(props) {
     buttonText,
   } = props;
 
-  return (
+  const hasResults = results.length > 0;
+
+  return hasResults ?
     <div className="col-md-6 card-list-container">
       <h2 className="sub-heading-text">{headingText}</h2>
       <ul>
@@ -25,7 +27,10 @@ export default function PropertyPanel(props) {
           </li>))}
       </ul>
     </div>
-  );
+    :
+    <div className="col-md-6 card-list-container">
+      <h2 className="sub-heading-text">{headingText}</h2>
+    </div>;
 }
 
 PropertyPanel.propTypes = {
@@ -40,7 +45,13 @@ PropertyPanel.propTypes = {
     }).isRequired,
     id: PropTypes.string.isRequired,
     mainImage: PropTypes.string.isRequired,
-  })).isRequired,
+  })),
   handlePropBtnClick: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
+
+PropertyPanel.defaultProps = {
+  results: [],
+};
+
+export default PropertyPanel;
