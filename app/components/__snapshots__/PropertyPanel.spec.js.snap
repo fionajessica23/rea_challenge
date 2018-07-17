@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Property Panel with no listing 1`] = `
-<div
-  className="col-md-6 card-list-container"
->
-  <h2
-    className="sub-heading-text"
-  >
-    some heading text
-  </h2>
-</div>
-`;
-
-exports[`renders Property Panel with props correctly 1`] = `
+exports[`renders Property Panel with listings 1`] = `
 <div
   className="col-md-6 card-list-container"
 >
@@ -115,5 +103,17 @@ exports[`renders Property Panel with props correctly 1`] = `
       </div>
     </li>
   </ul>
+</div>
+`;
+
+exports[`renders Property Panel with no listing 1`] = `
+<div
+  className="col-md-6 card-list-container"
+>
+  <h2
+    className="sub-heading-text"
+  >
+    some heading text
+  </h2>
 </div>
 `;

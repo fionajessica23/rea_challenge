@@ -32,7 +32,7 @@ const defaultProps = {
   buttonText: 'some button text',
 };
 
-it('renders Property Panel with props correctly', () => {
+it('renders Property Panel with listings', () => {
   const tree = renderer
     .create(<PropertyPanel {...defaultProps} />)
     .toJSON();
