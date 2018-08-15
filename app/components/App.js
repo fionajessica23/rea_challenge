@@ -8,8 +8,11 @@ import {
   removeProperty,
 } from './../state/state-functions';
 
+import * as actionCreators from './actionCreators';
+import { connect } from 'react-redux';
 
-export default class App extends React.Component {
+
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleAddPropBtnClick = this.handleAddPropBtnClick.bind(this);
@@ -33,6 +36,8 @@ export default class App extends React.Component {
       <div className="container">
         <h1 className="header">For Sale</h1>
         <div className="row">
+          <h1>{this.props.count}</h1>
+          <button onClick={this.props.incrementCount} />
           <PropertyPanel
             headingText="Results"
             results={results}
@@ -50,3 +55,13 @@ export default class App extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+
+});
+
+const mapActionsToProps = {
+  incrementCount: actionCreators.incrementCount,
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(App);
