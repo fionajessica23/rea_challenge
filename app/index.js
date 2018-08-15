@@ -1,24 +1,24 @@
-import 'react-hot-loader/patch'
-require('./style.css')
+import React from 'react';
+import ReactDom from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import App from './components/App';
+import 'react-hot-loader/patch';
 
-import React from 'react'
-import ReactDom from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
-import App from './components/App'
+require('./style.css');
 
-const render = Component => {
+const render = (Component) => {
   ReactDom.render(
     <AppContainer>
       <Component />
     </AppContainer>,
-    document.querySelector('#app')
-  )
-}
+    document.querySelector('#app'),
+  );
+};
 
-render(App)
+render(App);
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
-    render(App)
-  })
+    render(App);
+  });
 }
