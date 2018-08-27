@@ -57,7 +57,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-
+  count: state.count,
 });
 
 const mapActionsToProps = {
