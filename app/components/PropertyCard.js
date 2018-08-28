@@ -23,7 +23,7 @@ export default function PropertyCard(props) {
       <div className="card-footer">
         <div className="card-price-holder">{listing.price}</div>
         <div className="card-button-holder">
-          <button className="button-add-remove" onClick={() => { handlePropBtnClick(listing); }}>{buttonText}</button>
+          <button className="button-add-remove" onClick={() => { handlePropBtnClick(listing.id); }}>{buttonText}</button>
         </div>
       </div>
     </div>

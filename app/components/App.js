@@ -1,53 +1,73 @@
 import React from 'react';
 import PropertyPanel from './PropertyPanel';
 import './App.scss';
-import propertyData from './../state/property.data.json';
-
-import {
-  addProperty,
-  removeProperty,
-} from './../state/state-functions';
-
 import * as actionCreators from './actionCreators';
 import { connect } from 'react-redux';
 
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.handleAddPropBtnClick = this.handleAddPropBtnClick.bind(this);
+//     this.handleRemovePropBtnClick = this.handleRemovePropBtnClick.bind(this);
 
+//     this.state = propertyData;
+//   }
+
+//   handleAddPropBtnClick(result) {
+//     this.setState(addProperty(this.state, result.id));
+//   }
+
+//   handleRemovePropBtnClick(savedProp) {
+//     this.setState(removeProperty(this.state, savedProp.id));
+//   }
+
+//   render() {
+//     const { results, saved } = this.state;
+
+//     return (
+//       <div className="container">
+//         <h1 className="header">For Sale</h1>
+//         <div className="row">
+//           <PropertyPanel
+//             headingText="Results"
+//             results={results}
+//             handlePropBtnClick={this.handleAddPropBtnClick}
+//             buttonText="add property"
+//           />
+//           <PropertyPanel
+//             headingText="Saved Properties"
+//             results={saved}
+//             handlePropBtnClick={this.handleRemovePropBtnClick}
+//             buttonText="remove property"
+//           />
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleAddPropBtnClick = this.handleAddPropBtnClick.bind(this);
-    this.handleRemovePropBtnClick = this.handleRemovePropBtnClick.bind(this);
-
-    this.state = propertyData;
-  }
-
-  handleAddPropBtnClick(result) {
-    this.setState(addProperty(this.state, result.id));
-  }
-
-  handleRemovePropBtnClick(savedProp) {
-    this.setState(removeProperty(this.state, savedProp.id));
-  }
-
   render() {
-    const { results, saved } = this.state;
+    const {
+      results,
+      saved,
+      addSavedListing,
+      removeSavedListing,
+    } = this.props;
 
     return (
       <div className="container">
         <h1 className="header">For Sale</h1>
         <div className="row">
-          <h1>{this.props.count}</h1>
-          <button onClick={this.props.incrementCount} />
           <PropertyPanel
             headingText="Results"
             results={results}
-            handlePropBtnClick={this.handleAddPropBtnClick}
+            handlePropBtnClick={addSavedListing}
             buttonText="add property"
           />
           <PropertyPanel
             headingText="Saved Properties"
             results={saved}
-            handlePropBtnClick={this.handleRemovePropBtnClick}
+            handlePropBtnClick={removeSavedListing}
             buttonText="remove property"
           />
         </div>
@@ -57,11 +77,13 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  count: state.count,
+  results: state.listings,
+  saved: state.savedListings,
 });
 
 const mapActionsToProps = {
-  incrementCount: actionCreators.incrementCount,
+  addSavedListing: actionCreators.addSavedListing,
+  removeSavedListing: actionCreators.removeSavedListing,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(App);

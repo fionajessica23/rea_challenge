@@ -1,4 +1,3 @@
-
 export function addProperty(state, id) {
   const { results, saved } = state;
   const existingProp = saved.filter(savedProp => savedProp.id === id)[0];
