@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './PropertyCard.scss';
 
-
-export default function PropertyCard(props) {
+function PropertyCard(props) {
   const { listing, handlePropBtnClick, buttonText } = props;
 
   const cardDivStyle = {
@@ -45,3 +44,5 @@ PropertyCard.propTypes = {
   handlePropBtnClick: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
+
+export default PropertyCard;
