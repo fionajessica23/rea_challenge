@@ -6,12 +6,10 @@ import * as actionCreators from './actionCreators';
 import { connect } from 'react-redux';
 
 function App(props) {
-  const {
-    results,
-    saved,
-    addSavedListing,
-    removeSavedListing,
-  } = props;
+  const { listings, addSavedListing, removeSavedListing } = props;
+
+  const results = listings.filter(listing => listing.isSaved === false);
+  const saved = listings.filter(listing => listing.isSaved === true);
 
   return (
     <div className="container">
@@ -35,7 +33,7 @@ function App(props) {
 }
 
 App.propTypes = {
-  results: PropTypes.arrayOf(PropTypes.shape({
+  listings: PropTypes.arrayOf(PropTypes.shape({
     price: PropTypes.string.isRequired,
     agency: PropTypes.shape({
       brandingColors: PropTypes.shape({
@@ -46,28 +44,12 @@ App.propTypes = {
     id: PropTypes.string.isRequired,
     mainImage: PropTypes.string.isRequired,
   })).isRequired,
-  saved: PropTypes.arrayOf(PropTypes.shape({
-    price: PropTypes.string.isRequired,
-    agency: PropTypes.shape({
-      brandingColors: PropTypes.shape({
-        primary: PropTypes.string.isRequired,
-      }).isRequired,
-      logo: PropTypes.string.isRequired,
-    }).isRequired,
-    id: PropTypes.string.isRequired,
-    mainImage: PropTypes.string.isRequired,
-  })),
   addSavedListing: PropTypes.func.isRequired,
   removeSavedListing: PropTypes.func.isRequired,
 };
 
-App.defaultProps = {
-  saved: [],
-};
-
 const mapStateToProps = state => ({
-  results: state.listings,
-  saved: state.savedListings,
+  listings: state.listings,
 });
 
 const mapActionsToProps = {

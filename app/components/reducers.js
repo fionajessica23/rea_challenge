@@ -1,31 +1,51 @@
 import { ADD_SAVED_LISTING, REMOVE_SAVED_LISTING } from './actions';
 import propertyData from '../state/property.data.json';
 
-const initialState = {
+const rawInitialState = {
   listings: propertyData.results,
   savedListings: propertyData.saved,
 };
 
-function addProperty(state, id) {
-  const { listings, savedListings } = state;
-  const existingSavedListing = savedListings.filter(savedListing => savedListing.id === id)[0];
+const preparedListings = rawInitialState.listings.map(listing => ({
+  ...listing,
+  isSaved: false,
+}));
 
-  if (!existingSavedListing) {
-    const matches = listings.filter(listing => listing.id === id);
+const preparedSavedListings = rawInitialState.savedListings.map(savedListing => ({
+  ...savedListing,
+  isSaved: true,
+}));
+
+const initialState = {
+  listings: [...preparedListings, ...preparedSavedListings],
+};
+
+function addProperty(state, id) {
+  const { listings } = state;
+  const choosenListing = listings.filter(listing => listing.id === id)[0];
+
+  if (choosenListing.isSaved === false) {
+    choosenListing.isSaved = true;
     return {
-      savedListings: [...savedListings, ...matches],
+      listings: [...listings, ...choosenListing],
     };
   }
 
-  return { savedListings };
+  return { listings };
 }
 
 function removeProperty(state, id) {
-  const { savedListings } = state;
-  const matches = savedListings.filter(listing => listing.id !== id);
-  return {
-    savedListings: [...matches],
-  };
+  const { listings } = state;
+  const choosenListing = listings.filter(listing => listing.id === id)[0];
+
+  if (choosenListing.isSaved === true) {
+    choosenListing.isSaved = false;
+    return {
+      listings: [...listings, ...choosenListing],
+    };
+  }
+
+  return { listings };
 }
 
 export default (state = initialState, action) => {
