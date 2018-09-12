@@ -3,14 +3,7 @@ import PropTypes from 'prop-types';
 import PropertyCard from './PropertyCard';
 import './PropertyCard.scss';
 
-function PropertyPanel(props) {
-  const {
-    headingText,
-    results,
-    handlePropBtnClick,
-    buttonText,
-  } = props;
-
+const PropertyPanel = ({ headingText, results, handlePropBtnClick, buttonText }) => {
   const hasResults = results.length > 0;
 
   return hasResults ?
@@ -31,7 +24,7 @@ function PropertyPanel(props) {
     <div className="col-md-6 card-list-container">
       <h2 className="sub-heading-text">{headingText}</h2>
     </div>;
-}
+};
 
 PropertyPanel.propTypes = {
   headingText: PropTypes.string.isRequired,

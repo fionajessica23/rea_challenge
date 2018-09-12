@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './PropertyCard.scss';
 
-function PropertyCard(props) {
-  const { listing, handlePropBtnClick, buttonText } = props;
-
+const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
   const cardDivStyle = {
     backgroundColor: `${listing.agency.brandingColors.primary}`,
   };
@@ -27,7 +25,7 @@ function PropertyCard(props) {
       </div>
     </div>
   );
-}
+};
 
 PropertyCard.propTypes = {
   listing: PropTypes.shape({

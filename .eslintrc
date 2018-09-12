@@ -3,6 +3,7 @@
   "parser": "babel-eslint",
   "rules": {
     "jsx-a11y/no-static-element-interactions": 1,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "object-curly-newline": "off"
   }
 }
