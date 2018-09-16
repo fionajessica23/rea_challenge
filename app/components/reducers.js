@@ -4,7 +4,6 @@ import propertyData from '../state/property.data.json';
 const rawInitialState = {
   listings: propertyData.results,
   savedListings: propertyData.saved,
-  // savedIds: [],
 };
 
 const initialState = {
@@ -12,18 +11,15 @@ const initialState = {
   savedIds: [...rawInitialState.savedListings.map(savedListing => savedListing.id)],
 };
 
-const addProperty = (state, id) => {
-  // FIXME: Only add if it doesn't exist already (with Set)
-  const { savedIds } = state;
-  const existingId = savedIds.includes(id);
+const addProperty = ({ savedIds }, id) => {
+  const uniqueSavedIds = new Set([...savedIds, id]); // Convert to set to handle duplicates
 
   return {
-    savedIds: !existingId ? [...savedIds, id] : savedIds,
+    savedIds: [...uniqueSavedIds],
   };
 };
 
-function removeProperty(state, id) {
-  const { savedIds } = state;
+function removeProperty({ savedIds }, id) {
   const newSavedIds = savedIds.filter(listingId => listingId !== id);
 
   return {
