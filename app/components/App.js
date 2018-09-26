@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PropertyPanel from './PropertyPanel';
-import './App.scss';
+import styles from './App.scss';
 import * as actionCreators from './actionCreators';
 
 const App = ({ listings, savedIds, addSavedListing, removeSavedListing }) => {
   const savedProperties = listings.filter(listing => savedIds.includes(listing.id));
 
   return (
-    <div className="container">
-      <h1 className="header">For Sale</h1>
-      <div className="row">
+    <div className={styles.container}>
+      <h1 className={styles.header}>For Sale</h1>
+      <div className={styles.panelsWrapper}>
         <PropertyPanel
           headingText="Results"
           results={listings}

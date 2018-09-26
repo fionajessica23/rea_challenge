@@ -43,10 +43,14 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.s?css$/,
-          use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+          use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader'],
-          })),
+            use: [
+              'css-loader?modules&importLoaders=2&localIdentName=[name]__[local]___[hash:base64:5]',
+              'postcss-loader',
+              'sass-loader',
+            ],
+          }),
         },
         {
           test: /\.(png|gif|jpg)$/,

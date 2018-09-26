@@ -1,31 +1,20 @@
-@import "./../style/style-variables";
+@import "./../style/style-variables.scss";
 
 html {
-  font-size: $root-font; //override bootstrap font-size
+  font-size: $root-font;
 }
 
-body {
+.container {
   background-color: $anti-flash-white;
   font-family: Helvetica;
+}
 
-  .header {
-    padding: $med-space 0;
-    text-align: center;
-  }
+.header {
+  padding: $med-space 0;
+  text-align: center;
+}
 
-  .card-list-container {
-    padding: 0;
-
-    .sub-heading-text {
-      text-align: center;
-    }
-
-    ul {
-      padding: 0;
-    }
-
-    li {
-      list-style: none
-    }
-  }
+.panelsWrapper {
+  display: flex;
+  justify-content: space-evenly;
 }

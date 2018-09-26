@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './PropertyCard.scss';
+import styles from './PropertyCard.scss';
 
 const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
   const cardDivStyle = {
@@ -8,20 +8,18 @@ const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
   };
 
   return (
-    <div className="card-container">
-      <div className="card-header" style={cardDivStyle}>
+    <div className={styles.container}>
+      <div className={styles.header} style={cardDivStyle}>
         <img src={listing.agency.logo} alt="Agency logo" />
       </div>
 
-      <div className="card-image">
+      <div className={styles.image}>
         <img src={listing.mainImage} alt={`Property ${listing.id}`} />
       </div>
 
-      <div className="card-footer">
-        <div className="card-price-holder">{listing.price}</div>
-        <div className="card-button-holder">
-          <button className="button-add-remove" onClick={() => { handlePropBtnClick(listing.id); }}>{buttonText}</button>
-        </div>
+      <div className={styles.footer}>
+        <div className={styles.priceHolder}>{listing.price}</div>
+        <button className={styles.buttonAddRemove} onClick={() => { handlePropBtnClick(listing.id); }}>{buttonText}</button> 
       </div>
     </div>
   );

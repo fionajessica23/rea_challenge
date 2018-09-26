@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PropertyCard from './PropertyCard';
-import './PropertyCard.scss';
+import styles from './PropertyPanel.scss';
 
 const PropertyPanel = ({ headingText, results, handlePropBtnClick, buttonText }) => {
   const hasResults = results.length > 0;
 
   return hasResults ?
-    <div className="col-md-6 card-list-container">
-      <h2 className="sub-heading-text">{headingText}</h2>
+    <div>
+      <h2 className={styles.subHeadingText}>{headingText}</h2>
       <ul>
         {results.map(result => (
           <li key={result.id}>
@@ -21,8 +21,8 @@ const PropertyPanel = ({ headingText, results, handlePropBtnClick, buttonText })
       </ul>
     </div>
     :
-    <div className="col-md-6 card-list-container">
-      <h2 className="sub-heading-text">{headingText}</h2>
+    <div>
+      <h2 className={styles.subHeadingText}>{headingText}</h2>
     </div>;
 };
 

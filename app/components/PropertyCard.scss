@@ -1,55 +1,47 @@
-@import "./../style/style-variables";
+@import "./../style/style-variables.scss";
 
-.card-container {
+.container {
   padding: $large-space $xxlarge-space;
+}
 
-  .card-header {
-    padding: $small-space;
-  }
+.header {
+  padding: $small-space;
+}
 
-  .card-image {
-    img {
-      max-width: 100%;
-    }
-  }
-
-  .card-footer {
-    padding: $med-space $med-space $large-space;
-    border: 1px solid $light-silver;
-    margin: 0;
-    font-size: $large-font;
-    font-weight: $bold-font-weight;
-
-    .card-price-holder {
-      display: inline-block;
-    }
-
-    .card-button-holder {
-      float: right;
-
-      .button-add-remove {
-        background-color: $blue-yonder;
-        padding: $base-space $small-space;
-        border: 1px solid $manatee;
-        border-radius: $default-border-radius;
-        text-align: center;
-        font-size: $med-font;
-      }
-    }
+.image {
+  > img {
+    max-width: 100%;
   }
 }
 
-.button-add-remove {
+.footer {
+  padding: $med-space;
+  border: 1px solid $light-silver;
+  font-size: $large-font;
+  font-weight: $bold-font-weight;
+  display: flex;
+  justify-content: space-between;
+}
+
+.priceHolder {
+  line-height: $xlarge-space;
+}
+
+.buttonAddRemove {
+  background-color: $blue-yonder;
+  padding: $base-space $small-space;
+  border: 1px solid $manatee;
+  border-radius: $default-border-radius;
+  font-size: $med-font;
   display: none;
   outline: none;
   box-shadow: $default-box-shadow;
+  &:active {
+    box-shadow: $active-box-shadow;
+    transform: translateY(3px);
+  }
 }
 
-.button-add-remove:active {
-  box-shadow: $active-box-shadow;
-  transform: translateY(3px);
-}
-
-.card-container:hover .button-add-remove {
+.container:hover .buttonAddRemove {
   display: inline-block;
 }
