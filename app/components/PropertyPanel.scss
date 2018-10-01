@@ -1,7 +1,10 @@
 @import "./../style/style-variables.scss";
 
 .subHeadingText {
+  margin: 0;
   text-align: center;
+  font-size: $xlarge-font;
+  font-weight: $normal-font-weight;
 }
 
 li {

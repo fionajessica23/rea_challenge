@@ -1,10 +1,5 @@
 # REA Challenge
 
-[Start the App](https://fionajessica23.github.io/rea_challenge/)
-
-
----
-
 ### Instructions for downloading and running this app
 
 1. Clone this repository to local computer  
@@ -29,10 +24,12 @@ yarn start
 yarn test
 ```
 
-5. Github supports hosting the site in a docs directory within the repo. Run the following command to build the site into docs directory and update the source setting on github
+5. Build the app for production use
 ```
 yarn run build
 ```
+
+Files are built out to the `/build` directory
 
 ---
 ### Approach

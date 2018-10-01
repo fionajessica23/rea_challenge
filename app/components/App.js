@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PropertyPanel from './PropertyPanel';
+import { LISTING_PROP_TYPES } from './propTypes';
 import styles from './App.scss';
 import * as actionCreators from './actionCreators';
 
@@ -9,20 +10,20 @@ const App = ({ listings, savedIds, addSavedListing, removeSavedListing }) => {
   const savedProperties = listings.filter(listing => savedIds.includes(listing.id));
 
   return (
-    <div className={styles.container}>
+    <div>
       <h1 className={styles.header}>For Sale</h1>
       <div className={styles.panelsWrapper}>
         <PropertyPanel
-          headingText="Results"
-          results={listings}
+          headingText="Available"
+          listings={listings}
           handlePropBtnClick={addSavedListing}
-          buttonText="add property"
+          buttonText="save"
         />
         <PropertyPanel
           headingText="Saved Properties"
-          results={savedProperties}
+          listings={savedProperties}
           handlePropBtnClick={removeSavedListing}
-          buttonText="remove property"
+          buttonText="remove"
         />
       </div>
     </div>
@@ -30,17 +31,7 @@ const App = ({ listings, savedIds, addSavedListing, removeSavedListing }) => {
 };
 
 App.propTypes = {
-  listings: PropTypes.arrayOf(PropTypes.shape({
-    price: PropTypes.string.isRequired,
-    agency: PropTypes.shape({
-      brandingColors: PropTypes.shape({
-        primary: PropTypes.string.isRequired,
-      }).isRequired,
-      logo: PropTypes.string.isRequired,
-    }).isRequired,
-    id: PropTypes.string.isRequired,
-    mainImage: PropTypes.string.isRequired,
-  })).isRequired,
+  listings: PropTypes.arrayOf(LISTING_PROP_TYPES).isRequired,
   savedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   addSavedListing: PropTypes.func.isRequired,
   removeSavedListing: PropTypes.func.isRequired,

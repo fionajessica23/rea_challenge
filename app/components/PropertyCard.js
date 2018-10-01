@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { LISTING_PROP_TYPES } from './propTypes';
 import styles from './PropertyCard.scss';
 
 const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
@@ -26,17 +27,7 @@ const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
 };
 
 PropertyCard.propTypes = {
-  listing: PropTypes.shape({
-    price: PropTypes.string.isRequired,
-    agency: PropTypes.shape({
-      brandingColors: PropTypes.shape({
-        primary: PropTypes.string.isRequired,
-      }).isRequired,
-      logo: PropTypes.string.isRequired,
-    }).isRequired,
-    id: PropTypes.string.isRequired,
-    mainImage: PropTypes.string.isRequired,
-  }).isRequired,
+  listing: LISTING_PROP_TYPES.isRequired,
   handlePropBtnClick: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
 };

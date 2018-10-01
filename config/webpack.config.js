@@ -7,7 +7,7 @@ const ROOT = path.join(__dirname, '../');
 
 const PATHS = {
   app: path.join(ROOT, 'app'),
-  build: path.join(ROOT, 'docs'),
+  build: path.join(ROOT, 'build'),
 };
 
 module.exports = (env = {}) => {
@@ -46,7 +46,7 @@ module.exports = (env = {}) => {
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
-              'css-loader?modules&importLoaders=2&localIdentName=[name]__[local]___[hash:base64:5]',
+              'css-loader?modules&importLoaders=2&localIdentName=[name]_[local]_[hash:base64:5]',
               'postcss-loader',
               'sass-loader',
             ],

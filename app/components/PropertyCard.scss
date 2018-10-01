@@ -2,6 +2,9 @@
 
 .container {
   padding: $large-space $xxlarge-space;
+  &:hover .buttonAddRemove {
+    display: inline-block;
+  }
 }
 
 .header {
@@ -33,6 +36,7 @@
   border: 1px solid $manatee;
   border-radius: $default-border-radius;
   font-size: $med-font;
+  font-weight: $bold-font-weight;
   display: none;
   outline: none;
   box-shadow: $default-box-shadow;
@@ -40,8 +44,4 @@
     box-shadow: $active-box-shadow;
     transform: translateY(3px);
   }
-}
-
-.container:hover .buttonAddRemove {
-  display: inline-block;
 }

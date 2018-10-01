@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './components/App';
 import 'react-hot-loader/patch';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './components/reducers';
-
-require('./style.css');
+import App from './components/App';
 
 const logger = store => next => (action) => {
   console.log('dispatching', action);

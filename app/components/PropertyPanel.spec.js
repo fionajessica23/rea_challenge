@@ -4,7 +4,7 @@ import PropertyPanel from './PropertyPanel';
 
 const defaultProps = {
   headingText: 'some heading text',
-  results: [
+  listings: [
     {
       price: '$650,000',
       agency: {
@@ -40,7 +40,7 @@ it('renders Property Panel with listings', () => {
 });
 
 it('renders Property Panel with no listing', () => {
-  const propWithNoListing = { ...defaultProps, results: [] };
+  const propWithNoListing = { ...defaultProps, listings: [] };
   const tree = renderer
     .create(<PropertyPanel {...propWithNoListing} />)
     .toJSON();

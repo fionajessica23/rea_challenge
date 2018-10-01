@@ -1,3 +1,6 @@
+// Breakpoint
+$med-breakpoint: 768px;
+
 // Spacing
 $base-space: 0.250rem; // 4px
 $small-space: 0.750rem; // 12px
@@ -10,9 +13,12 @@ $xxlarge-space: 2.500rem; // 40px
 $root-font: 16px;
 $med-font: $root-font;
 $large-font: 20px;
+$xlarge-font: 32px;
+$xxlarge-font: 40px;
 
 // Font Weight
 $bold-font-weight: 700;
+$normal-font-weight: 500;
 
 // Colour
 $anti-flash-white: #f0f2f5;
