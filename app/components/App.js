@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PropertyPanel from './PropertyPanel';
-import { LISTING_PROP_TYPES } from './propTypes';
+import LISTING_PROP_TYPES from './propTypes';
 import styles from './App.scss';
 import * as actionCreators from './actionCreators';
 

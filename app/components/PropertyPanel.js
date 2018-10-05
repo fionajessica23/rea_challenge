@@ -1,30 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PropertyCard from './PropertyCard';
-import { LISTING_PROP_TYPES } from './propTypes';
+import LISTING_PROP_TYPES from './propTypes';
 import styles from './PropertyPanel.scss';
 
 const PropertyPanel = ({ headingText, listings, handlePropBtnClick, buttonText }) => {
   const hasListings = listings.length > 0;
 
-  return hasListings ?
-    <div>
+  return (
+    <div className={styles.wrapper}>
       <h2 className={styles.subHeadingText}>{headingText}</h2>
-      <ul>
-        {listings.map(result => (
-          <li key={result.id}>
-            <PropertyCard
-              listing={result}
-              handlePropBtnClick={handlePropBtnClick}
-              buttonText={buttonText}
-            />
-          </li>))}
-      </ul>
+      {hasListings &&
+        <ul className={styles.list}>
+          {listings.map(result => (
+            <li className={styles.item} key={result.id}>
+              <PropertyCard
+                listing={result}
+                handlePropBtnClick={handlePropBtnClick}
+                buttonText={buttonText}
+              />
+            </li>))}
+        </ul>}
     </div>
-    :
-    <div>
-      <h2 className={styles.subHeadingText}>{headingText}</h2>
-    </div>;
+  );
 };
 
 PropertyPanel.propTypes = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LISTING_PROP_TYPES } from './propTypes';
+import LISTING_PROP_TYPES from './propTypes';
 import styles from './PropertyCard.scss';
 
 const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
@@ -20,7 +20,7 @@ const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
 
       <div className={styles.footer}>
         <div className={styles.priceHolder}>{listing.price}</div>
-        <button className={styles.buttonAddRemove} onClick={() => { handlePropBtnClick(listing.id); }}>{buttonText}</button> 
+        <button className={styles.buttonAddRemove} onClick={() => handlePropBtnClick(listing.id)}>{buttonText}</button> 
       </div>
     </div>
   );
