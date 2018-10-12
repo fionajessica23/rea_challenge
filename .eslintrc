@@ -1,9 +1,15 @@
 {
+  "env": {
+    "jest": true,
+    "browser": true,
+    "mocha": true
+  },
   "extends": "airbnb",
   "parser": "babel-eslint",
   "rules": {
     "jsx-a11y/no-static-element-interactions": 1,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "import/no-extraneous-dependencies": [ "error", { "devDependencies": true }]
   }
 }

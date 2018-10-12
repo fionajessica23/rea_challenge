@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PropertyCard from './PropertyCard';
-import LISTING_PROP_TYPES from './propTypes';
+import { LISTING_PROP_TYPES } from './propTypes';
 import styles from './PropertyPanel.scss';
 
-const PropertyPanel = ({ headingText, listings, handlePropBtnClick, buttonText }) => {
+const PropertyPanel = ({ headingText, listings, handleClick, buttonText }) => {
   const hasListings = listings.length > 0;
 
   return (
@@ -16,7 +16,7 @@ const PropertyPanel = ({ headingText, listings, handlePropBtnClick, buttonText }
             <li className={styles.item} key={result.id}>
               <PropertyCard
                 listing={result}
-                handlePropBtnClick={handlePropBtnClick}
+                handleClick={handleClick}
                 buttonText={buttonText}
               />
             </li>))}
@@ -28,7 +28,7 @@ const PropertyPanel = ({ headingText, listings, handlePropBtnClick, buttonText }
 PropertyPanel.propTypes = {
   headingText: PropTypes.string.isRequired,
   listings: PropTypes.arrayOf(LISTING_PROP_TYPES),
-  handlePropBtnClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
 

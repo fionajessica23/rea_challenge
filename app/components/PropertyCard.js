@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LISTING_PROP_TYPES from './propTypes';
+import { LISTING_PROP_TYPES } from './propTypes';
 import styles from './PropertyCard.scss';
 
-const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
+const PropertyCard = ({ listing, handleClick, buttonText }) => {
   const cardDivStyle = {
     backgroundColor: `${listing.agency.brandingColors.primary}`,
   };
@@ -20,7 +20,7 @@ const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
 
       <div className={styles.footer}>
         <div className={styles.priceHolder}>{listing.price}</div>
-        <button className={styles.buttonAddRemove} onClick={() => handlePropBtnClick(listing.id)}>{buttonText}</button> 
+        <button className={styles.buttonAddRemove} onClick={() => handleClick(listing.id)}>{buttonText}</button> 
       </div>
     </div>
   );
@@ -28,7 +28,7 @@ const PropertyCard = ({ listing, handlePropBtnClick, buttonText }) => {
 
 PropertyCard.propTypes = {
   listing: LISTING_PROP_TYPES.isRequired,
-  handlePropBtnClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
 

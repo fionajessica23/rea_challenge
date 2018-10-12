@@ -1,14 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Property Panel with listings 1`] = `
-<div>
+<div
+  className="mockClassName-wrapper"
+>
   <h2
     className="mockClassName-subHeadingText"
   >
     some heading text
   </h2>
-  <ul>
-    <li>
+  <ul
+    className="mockClassName-list"
+  >
+    <li
+      className="mockClassName-item"
+    >
       <div
         className="mockClassName-container"
       >
@@ -50,7 +56,9 @@ exports[`renders Property Panel with listings 1`] = `
         </div>
       </div>
     </li>
-    <li>
+    <li
+      className="mockClassName-item"
+    >
       <div
         className="mockClassName-container"
       >
@@ -97,7 +105,9 @@ exports[`renders Property Panel with listings 1`] = `
 `;
 
 exports[`renders Property Panel with no listing 1`] = `
-<div>
+<div
+  className="mockClassName-wrapper"
+>
   <h2
     className="mockClassName-subHeadingText"
   >

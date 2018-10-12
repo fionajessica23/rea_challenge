@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PropertyPanel from './PropertyPanel';
-import LISTING_PROP_TYPES from './propTypes';
+import { LISTING_PROP_TYPES } from './propTypes';
 import styles from './App.scss';
 import * as actionCreators from './actionCreators';
 
-const App = ({ listings, savedIds, addSavedListing, removeSavedListing }) => {
+export const App = ({ listings, savedIds, addSavedListing, removeSavedListing }) => {
   const savedProperties = listings.filter(listing => savedIds.includes(listing.id));
 
   return (
@@ -16,13 +16,13 @@ const App = ({ listings, savedIds, addSavedListing, removeSavedListing }) => {
         <PropertyPanel
           headingText="Available"
           listings={listings}
-          handlePropBtnClick={addSavedListing}
+          handleClick={addSavedListing}
           buttonText="save"
         />
         <PropertyPanel
           headingText="Saved Properties"
           listings={savedProperties}
-          handlePropBtnClick={removeSavedListing}
+          handleClick={removeSavedListing}
           buttonText="remove"
         />
       </div>
