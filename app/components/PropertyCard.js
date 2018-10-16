@@ -13,14 +13,12 @@ const PropertyCard = ({ listing, handleClick, buttonText }) => {
       <div className={styles.header} style={cardDivStyle}>
         <img src={listing.agency.logo} alt="Agency logo" />
       </div>
-
       <div className={styles.image}>
         <img src={listing.mainImage} alt={`Property ${listing.id}`} />
       </div>
-
       <div className={styles.footer}>
         <div className={styles.priceHolder}>{listing.price}</div>
-        <button className={styles.buttonAddRemove} onClick={() => handleClick(listing.id)}>{buttonText}</button> 
+        <button className={styles.buttonAddRemove} onClick={() => handleClick(listing.id)}>{buttonText}</button>
       </div>
     </div>
   );

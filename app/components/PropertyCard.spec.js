@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import PropertyCard from './PropertyCard';
 
-const defaultProps = {
+const DEFAULT_PROPS = {
   listing:
     {
       price: '$650,000',
@@ -21,7 +21,7 @@ const defaultProps = {
 
 it('renders Property Card correctly', () => {
   const tree = renderer
-    .create(<PropertyCard {...defaultProps} />)
+    .create(<PropertyCard {...DEFAULT_PROPS} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

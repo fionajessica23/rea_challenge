@@ -2,6 +2,8 @@
 
 .wrapper {
   width: 100%;
+  max-width: $default-width;
+  margin: 0 auto;
 }
 
 .subHeadingText {

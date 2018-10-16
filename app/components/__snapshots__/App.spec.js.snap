@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App with listings 1`] = `
+<div>
+  <h1
+    className="mockClassName-header"
+  >
+    For Sale
+  </h1>
+  <div
+    className="mockClassName-panelsWrapper"
+  >
+    <PropertyPanel
+      buttonText="save"
+      handleClick={[Function]}
+      headingText="Available"
+      listings={
+        Array [
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#000000",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "9",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$650,000",
+          },
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#111111",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "5",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$300,000",
+          },
+        ]
+      }
+    />
+    <PropertyPanel
+      buttonText="remove"
+      handleClick={[Function]}
+      headingText="Saved Properties"
+      listings={
+        Array [
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#111111",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "5",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$300,000",
+          },
+        ]
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders App with no saved listings 1`] = `
+<div>
+  <h1
+    className="mockClassName-header"
+  >
+    For Sale
+  </h1>
+  <div
+    className="mockClassName-panelsWrapper"
+  >
+    <PropertyPanel
+      buttonText="save"
+      handleClick={[Function]}
+      headingText="Available"
+      listings={
+        Array [
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#000000",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "9",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$650,000",
+          },
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#111111",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "5",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$300,000",
+          },
+        ]
+      }
+    />
+    <PropertyPanel
+      buttonText="remove"
+      handleClick={[Function]}
+      headingText="Saved Properties"
+      listings={Array []}
+    />
+  </div>
+</div>
+`;
+
+exports[`renders App with saved properties id equal to 9 1`] = `
+<div>
+  <h1
+    className="mockClassName-header"
+  >
+    For Sale
+  </h1>
+  <div
+    className="mockClassName-panelsWrapper"
+  >
+    <PropertyPanel
+      buttonText="save"
+      handleClick={[Function]}
+      headingText="Available"
+      listings={
+        Array [
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#000000",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "9",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$650,000",
+          },
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#111111",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "5",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$300,000",
+          },
+        ]
+      }
+    />
+    <PropertyPanel
+      buttonText="remove"
+      handleClick={[Function]}
+      headingText="Saved Properties"
+      listings={
+        Array [
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#000000",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "9",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$650,000",
+          },
+        ]
+      }
+    />
+  </div>
+</div>
+`;

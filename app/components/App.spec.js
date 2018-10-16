@@ -1,11 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PropertyPanel from './PropertyPanel';
+import { App } from './App';
 
-jest.mock('./PropertyCard.js', () => 'PropertyCard');
+jest.mock('./PropertyPanel.js', () => 'PropertyPanel');
 
 const DEFAULT_PROPS = {
-  headingText: 'some heading text',
   listings: [
     {
       price: '$650,000',
@@ -30,21 +29,30 @@ const DEFAULT_PROPS = {
       mainImage: 'http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg',
     },
   ],
-  handleClick: () => { },
-  buttonText: 'some button text',
+  savedIds: ['5'],
+  addSavedListing: () => { },
+  removeSavedListing: () => { },
 };
 
-it('renders Property Panel with listings', () => {
+it('renders App with listings', () => {
   const tree = renderer
-    .create(<PropertyPanel {...DEFAULT_PROPS} />)
+    .create(<App {...DEFAULT_PROPS} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-it('renders Property Panel with no listing', () => {
-  const propWithNoListing = { ...DEFAULT_PROPS, listings: [] };
+it('renders App with saved properties id equal to 9', () => {
+  const propWithSavedIds = { ...DEFAULT_PROPS, savedIds: ['9'] };
   const tree = renderer
-    .create(<PropertyPanel {...propWithNoListing} />)
+    .create(<App {...propWithSavedIds} />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('renders App with no saved listings', () => {
+  const propWithNoSavedIds = { ...DEFAULT_PROPS, savedIds: [] };
+  const tree = renderer
+    .create(<App {...propWithNoSavedIds} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

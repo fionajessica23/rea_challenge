@@ -15,17 +15,17 @@ const addProperty = ({ savedIds }, id) => {
   const uniqueSavedIds = new Set([...savedIds, id]); // Convert to set to handle duplicates
 
   return {
-    savedIds: [...uniqueSavedIds],
+    savedIds: [...uniqueSavedIds], // Need to spread this to convert from Set
   };
 };
 
-function removeProperty({ savedIds }, id) {
+const removeProperty = ({ savedIds }, id) => {
   const newSavedIds = savedIds.filter(listingId => listingId !== id);
 
   return {
     savedIds: newSavedIds,
   };
-}
+};
 
 export default (state = initialState, action) => {
   const actions = {

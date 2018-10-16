@@ -15,90 +15,44 @@ exports[`renders Property Panel with listings 1`] = `
     <li
       className="mockClassName-item"
     >
-      <div
-        className="mockClassName-container"
-      >
-        <div
-          className="mockClassName-header"
-          style={
-            Object {
-              "backgroundColor": "#000000",
-            }
+      <PropertyCard
+        buttonText="some button text"
+        handleClick={[Function]}
+        listing={
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#000000",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "9",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$650,000",
           }
-        >
-          <img
-            alt="Agency logo"
-            src="http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif"
-          />
-        </div>
-        <div
-          className="mockClassName-image"
-        >
-          <img
-            alt="Property 9"
-            src="http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg"
-          />
-        </div>
-        <div
-          className="mockClassName-footer"
-        >
-          <div
-            className="mockClassName-priceHolder"
-          >
-            $650,000
-          </div>
-          <button
-            className="mockClassName-buttonAddRemove"
-            onClick={[Function]}
-          >
-            some button text
-          </button>
-        </div>
-      </div>
+        }
+      />
     </li>
     <li
       className="mockClassName-item"
     >
-      <div
-        className="mockClassName-container"
-      >
-        <div
-          className="mockClassName-header"
-          style={
-            Object {
-              "backgroundColor": "#111111",
-            }
+      <PropertyCard
+        buttonText="some button text"
+        handleClick={[Function]}
+        listing={
+          Object {
+            "agency": Object {
+              "brandingColors": Object {
+                "primary": "#111111",
+              },
+              "logo": "http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif",
+            },
+            "id": "5",
+            "mainImage": "http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
+            "price": "$300,000",
           }
-        >
-          <img
-            alt="Agency logo"
-            src="http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif"
-          />
-        </div>
-        <div
-          className="mockClassName-image"
-        >
-          <img
-            alt="Property 5"
-            src="http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg"
-          />
-        </div>
-        <div
-          className="mockClassName-footer"
-        >
-          <div
-            className="mockClassName-priceHolder"
-          >
-            $300,000
-          </div>
-          <button
-            className="mockClassName-buttonAddRemove"
-            onClick={[Function]}
-          >
-            some button text
-          </button>
-        </div>
-      </div>
+        }
+      />
     </li>
   </ul>
 </div>

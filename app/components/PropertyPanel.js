@@ -10,7 +10,7 @@ const PropertyPanel = ({ headingText, listings, handleClick, buttonText }) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.subHeadingText}>{headingText}</h2>
-      {hasListings &&
+      { hasListings &&
         <ul className={styles.list}>
           {listings.map(result => (
             <li className={styles.item} key={result.id}>
@@ -19,8 +19,10 @@ const PropertyPanel = ({ headingText, listings, handleClick, buttonText }) => {
                 handleClick={handleClick}
                 buttonText={buttonText}
               />
-            </li>))}
-        </ul>}
+            </li>
+          ))}
+        </ul>
+      }
     </div>
   );
 };
