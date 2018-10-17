@@ -5,15 +5,17 @@ import 'react-hot-loader/patch';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './components/reducers';
-import App from './components/App';
+import ReduxApp from './components/App';
 
 const logger = store => next => (action) => {
-  console.log('dispatching', action);
-  console.log('current state', store.getState());
+  // This could be used down the track for tracking events? At the moment it is just for debugging.
+  console.log('dispatching', action); // eslint-disable-line no-console
+  console.log('current state', store.getState()); // eslint-disable-line no-console
 
   return next(action);
 };
 
+// eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
@@ -32,10 +34,10 @@ const render = (Component) => {
   );
 };
 
-render(App);
+render(ReduxApp);
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
-    render(App);
+    render(ReduxApp);
   });
 }

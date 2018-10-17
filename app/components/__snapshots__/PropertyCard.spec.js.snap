@@ -17,14 +17,11 @@ exports[`renders Property Card correctly 1`] = `
       src="http://i2.au.reastatic.net/agencylogo/WVYSSK/2/20140701084436.gif"
     />
   </div>
-  <div
+  <img
+    alt="Property 9"
     className="mockClassName-image"
-  >
-    <img
-      alt="Property 9"
-      src="http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg"
-    />
-  </div>
+    src="http://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg"
+  />
   <div
     className="mockClassName-footer"
   >

@@ -11,15 +11,15 @@ const PATHS = {
 };
 
 module.exports = (env = {}) => {
-  console.log('ENV:', env);
+  console.log('ENV:', env); // eslint-disable-line no-console
 
   const common = {
-    entry: { // looks for entry filenames
-      app: PATHS.app, // scan the content for import and require
+    entry: {
+      app: PATHS.app,
     },
-    output: { // bundles everthing to the output.path dir
-      path: PATHS.build, // naming it with output.filename
-      filename: '[name].build.js', // [name] replaced with entry object key
+    output: {
+      path: PATHS.build,
+      filename: '[name].build.js',
     },
 
     plugins: [
@@ -68,7 +68,7 @@ module.exports = (env = {}) => {
   const dev = {
     devtool: 'cheap-module-source-map',
     devServer: {
-      port: 8000,
+      port: 8080,
       stats: 'errors-only',
     },
   };
@@ -77,4 +77,4 @@ module.exports = (env = {}) => {
     return Object.assign({}, common, dev);
   }
   return Object.assign({}, common);
-}; // end function
+};

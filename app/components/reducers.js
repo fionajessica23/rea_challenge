@@ -1,5 +1,5 @@
 import { ADD_SAVED_LISTING, REMOVE_SAVED_LISTING } from './actions';
-import propertyData from '../state/property.data.json';
+import propertyData from '../data/property.data.json';
 
 const rawInitialState = {
   listings: propertyData.results,
