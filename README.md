@@ -19,10 +19,10 @@ $ yarn build        # build app to the /build directory
 
 ### Technologies used
 
-React, Redux
-Webpack, Babel
-CSS modules, SASS
-Mocha, Chai, Jest
-ESLint
+- React, Redux
+- Webpack, Babel
+- CSS modules, SASS
+- Mocha, Chai, Jest
+- ESLint
 
 ---

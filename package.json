@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --hot --env.dev --config config/webpack.config.js",
     "build": "webpack --env.production -p --config config/webpack.config.js",
-    "test":  "yarn run mocha && yarn run jest",
+    "test": "yarn run mocha && yarn run jest",
     "mocha": "mocha --require setup.js --compilers js:babel-core/register 'app/components/*-spec.js'",
     "jest": "jest"
   },
